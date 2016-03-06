@@ -1,5 +1,6 @@
 class TunnelCamera {
 
+  //Global Variables
   PVector pos;
   PVector target;
 
@@ -10,17 +11,19 @@ class TunnelCamera {
 
   float accSpeed;
 
-  TunnelCamera(PVector _pos) {
+  //Constructor
+    TunnelCamera(PVector _pos) {
     pos = _pos.copy();
     target = new PVector (0, 0, 0);
     acc = new PVector (0, 0, 0);
     vel = new PVector (0, 0, 0);
 
     friction = 0.95;
-    accSpeed = 0.5;
-  } //End constructor
+    accSpeed = 0.3;
+  } 
 
-  void update() {
+  //Functions
+void update() {
 
     if (mousePressed && mouseButton == LEFT) {
       acc = new PVector(0, 0, accSpeed);
@@ -32,7 +35,7 @@ class TunnelCamera {
     pos.add(vel);
     acc.mult(0);
 
-    target = new PVector(pos.x, pos.y, pos.z + 1);
+    target = new PVector(pos.x, pos.y, pos.z + 0.5);
 
     camera(pos.x, pos.y, pos.z, target.x, target.y, target.z, sin(radians(frameCount*0.3)), 1, 0);
   }
@@ -40,4 +43,5 @@ class TunnelCamera {
   void setCamHeight(float _camHeight) {
     pos.y = _camHeight;
   }
-} //End TunnelCamera
+} 
+// End TunnelCamera

@@ -17,7 +17,7 @@ class TunnelCamera {
     vel = new PVector (0, 0, 0);
 
     friction = 0.95;
-    accSpeed = 0.5;
+    accSpeed = 0.3;
   } //End constructor
 
   void update() {
