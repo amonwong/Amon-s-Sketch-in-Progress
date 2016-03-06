@@ -15,22 +15,25 @@ class Box {
     col = int(random(255));
   }
   void draw() {
-    // pushMatrix();
     
     translate(x, y, z);
     rotate(PI/3);
     fill(col);
     box(s);
     stroke(0);
-    rotate(PI/3);
-    //for(int i=0;i<1;i++) {
-    //  float rx = random(-120,120);
-    //  float ry = random(-120,120);
-    //  float rz = random(-120,120);
-    //  line(0,0,0,width*10,i*10,0);
-    //}
+
+      if (key == 'w') {
+
+    for(int i=0;i<1;i++) {
+     float rx = random(-120,120);
+     float ry = random(-120,120);
+     float rz = random(-120,120);
+     line(0,0,0,width*10,i*10,50);
+    }
+      }
     noStroke();
-    // popMatrix();
+        //rotate(PI/6);
+
   }
 
   void update() {
